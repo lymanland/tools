@@ -1,0 +1,42 @@
+<config>
+	<!-- 
+		linkageAsPre：导出类的前缀
+		needNewDoc：  整理好的资源是否需要放在新建的一个文件里，或是原来的文件里
+		
+		准备：1. 所有将要成为1个面板的元件打成一个组，并删除资源里其他多余的组。
+			  2. 把要做成多帧tip面板的组们都放在一个新建的层中，层的命名以tip为前缀，后缀随意，名字与 l标签中的layername 对应
+				2.1 多帧面板的帧位置随着与组的x坐标递增而递增
+			  3. 一般面板单独放在一帧里，并且放在名字不是tip开头的层中
+			  4.<layer>中了<l>标签由所需要集成的面板类型数量（即整理后的fla中图层数量）进行删减。
+			  5.集成完成的标志是flash输出true
+		敬告：1. 集的过程中如果有卡的现象为正常，如果卡很久的话就不正常。资源过大的情况偶尔flash会崩溃
+			  2. 所有图层都需可见
+		<layer>
+			layername：与资源里的图层名字相对应。
+						1.做成单帧面板（如主面板）：
+							a. fla里的图层名字: 除了 tip* 之外都行。
+						2. 做成多帧tip
+							a. fla里的图层名字: tip作为前缀。
+			name：集成后库中元件的名称
+			linkage：与linkageAsPre配合成为导出类
+			func：makeTipResFromLayer为集成tips的方法；makeOtherResFromLayer为集成单个面板的方法
+			needMcContainer：多帧tip面板是否是单帧的，即是否包含一个多帧mc ( 如果是false，则该导出类对应的元件是一个多帧mc)
+			spritePerFrame：如果是ture：多帧tip面板里面每帧又是一个sprite元件。 
+		</layer>	
+		
+		fla与配置范例见\\10.18.8.53 共享 \自动集面板范例 \ 1
+	-->
+	
+	<linkageAsPre>mmo.xmf.</linkageAsPre>
+	<needNewDoc>true</needNewDoc>
+
+	<layer>
+		<l layername="tip1" name="明王tip" linkage="xmftip_panel" func="makeTipResFromLayer" needMcContainer="true" spritePerFrame="false"/>
+		<l layername="tip2" name="123王tip" linkage="xmf123tip_panel" func="makeTipResFromLayer" needMcContainer="false" spritePerFrame="true"/>
+		<l layername="tip3" name="abvttip" linkage="xmf123tip_panel" func="makeTipResFromLayer" needMcContainer="false" spritePerFrame="false"/>
+	
+		<l layername="default" name="面板" linkage="main_panel" func="makeOtherResFromLayer" />	
+	</layer>
+	
+	
+</config>

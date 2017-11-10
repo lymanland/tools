@@ -1,0 +1,4 @@
+npc FLA文件命名格式为：
+npcName_npcId.fla 如：小诺_188.fla 
+
+fla文件舞台上从左到右要有npc表情元件实例和npc场景形象元件实例

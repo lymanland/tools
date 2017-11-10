@@ -1,0 +1,1 @@
+1.美术元件命名规则：name_name_name_Id.fla例如：square_Square_奥奇广场_19.fla2.库里面的美术元件，如果存在背景层，前景层，顶层，障碍层，容器层，要分别命名为：BackgroundForegroundTopgroundObstructionOverlap否则，程序会新建相应的名字的空层。并且这五层元件不在任何文件夹内。3.美术发来的场景元件要移动到舞台。

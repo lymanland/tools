@@ -1,0 +1,6 @@
+<config>
+  <taskId>592</taskId>
+  <taskConf>Comic,Mov</taskConf>
+  <clsPosix>Mov_,Comic_</clsPosix>
+  <filePosix>mov,comic</filePosix>
+</config>
